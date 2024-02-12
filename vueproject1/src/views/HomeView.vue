@@ -1,9 +1,10 @@
 <script setup>
-import TheWelcome from '../components/TheWelcome.vue'
+import { store } from "@/stores/counter";
+import jonathan from "@/components/joe.vue";
 </script>
 
 <template>
-  <main>
-    <TheWelcome />
-  </main>
+  <h1>hi</h1>
+  <jonathan />
+  <button @click="store.count++">Press B {{ store.count }}</button>
 </template>

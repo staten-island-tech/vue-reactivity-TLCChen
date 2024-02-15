@@ -1,0 +1,24 @@
+html, body, *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 10px;
+  }
+
+.bigBox, .bigBox2, .bigBox3, .bigBox4, .bigBox5{
+    background-color: blue;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    height: 20vh;
+}
+
+.box, .box2, .box3,.box4,.box5{
+    background-color: red;
+    /* position: fixed;
+    bottom: 0;
+    left: 80%; */
+    width: 20%;
+    height: 100%;
+    border: 1rem solid #73AD21;
+}

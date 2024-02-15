@@ -116,7 +116,7 @@ document.querySelectorAll(".box").forEach((create) =>
 document.querySelectorAll(".btn").forEach((create) =>
   create.addEventListener("click", function () {
     this.parentElement.insertAdjacentHTML(
-      "afterbegin",
+      "beforeend",
       `
         <img src="favicon.ico" alt="">
     `

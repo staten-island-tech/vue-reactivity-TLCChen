@@ -22,3 +22,9 @@ html, body, *{
     height: 100%;
     border: 1rem solid #73AD21;
 }
+
+.block{
+    background-color: #86358d;
+    height: 5rem;
+    width: 5rem;
+}

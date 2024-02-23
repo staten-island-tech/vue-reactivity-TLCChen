@@ -28,3 +28,35 @@ html, body, *{
     height: 5rem;
     width: 5rem;
 }
+.left{
+    position: absolute;
+    left: 1rem;
+    top: 2 rem;
+    width: 1rem;
+    z-index: 99;
+}
+.right{
+    position: absolute;
+    left: 5rem;
+    top: 2 rem;
+    width: 1rem;
+    z-index: 99;
+}
+.up{
+    position: absolute;
+    left: 9rem;
+    top: 2 rem;
+    width: 1rem;
+    z-index: 99;
+}
+.down{
+    position: absolute;
+    left: 13rem;
+    top: 2 rem;
+    width: 1rem;
+    z-index: 99;
+}
+
+.btns{
+    z-index: 99999;
+}

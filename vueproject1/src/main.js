@@ -121,10 +121,11 @@ app.mount("#app");
 //     );
 //   })
 // );
+// make a flexbox then add colors to the sides that have separate ids. Press id to move in direction
 const block = document.querySelector(".block");
-block.style.position = "absolute";
-block.style.left = "1rem";
-block.style.top = "1rem";
+document.querySelector(".block").style.position = "absolute";
+document.querySelector(".block").style.left = "1rem";
+document.querySelector(".block").style.top = "1rem";
 
 const Doms = {
   up: document.querySelector(".up"),
@@ -133,25 +134,46 @@ const Doms = {
   right: document.querySelector(".right"),
 };
 let left = 0;
+let down = 0;
+let kids = "";
+let now = "";
 function move() {
-  block.addEventListener("click", function () {
-    block.style.position = "absolute";
-    block.style.top = "1rem";
+  Doms.left.addEventListener("click", function () {
+    Doms.left.style.position = "relative";
+    left -= 10;
+    document.querySelector(".block").style.left = left.toString() + "rem";
+    document.querySelector(".block").style.backgroundColor = "blue";
+    console.log(left.toString() + "rem");
   });
 
-  // Doms.down.addEventListener("click", function () {
-  //   block.style.position = "relative";
-  //   block.style.bottom = "1rem";
-  // });
-  Doms.left.addEventListener("click", function () {
-    left++;
-    let bob = (block.style.position = "relative");
-    block.style.left = `${left}`;
-    console.log(left);
+  Doms.right.addEventListener("click", function () {
+    document.querySelector(".block").style.position = "relative";
+    left += 10;
+    document.querySelector(".block").style.left = left.toString() + "rem";
+    document.querySelector(".block").style.backgroundColor = "blue";
+    console.log(left.toString() + "rem");
   });
-  // Doms.right.addEventListener("click", function () {
-  //   block.style.position = "relative";
-  //   block.style.right = "1rem";
-  // });
+  Doms.down.addEventListener("click", function () {
+    document.querySelector(".block").style.position = "relative";
+    down += 10;
+    document.querySelector(".block").style.top = down.toString() + "rem";
+    document.querySelector(".block").style.backgroundColor = "blue";
+    console.log(left.toString() + "rem");
+  });
+  Doms.up.addEventListener("click", function () {
+    document.querySelector(".block").style.position = "relative";
+    down -= 10;
+    document.querySelector(".block").style.top = down.toString() + "rem";
+    document.querySelector(".block").style.backgroundColor = "blue";
+    console.log(left.toString() + "rem");
+  });
 }
+// document.querySelector(".block").addEventListener("click", function () {
+//   document.querySelector(".block").style.position = "relative";
+//   left += 10;
+//   document.querySelector(".block").style.top = left.toString() + "rem";
+//   document.querySelector(".block").style.backgroundColor = "blue";
+//   console.log(left.toString() + "rem");
+// });
+
 move();

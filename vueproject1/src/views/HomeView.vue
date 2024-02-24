@@ -4,7 +4,7 @@ import jonathan from "@/components/joe.vue";
 </script>
 
 <template>
-  <h1>hi</h1>
+  <h1>bye</h1>
   <jonathan />
   <button @click="store.count++">Press B {{ store.count }}</button>
 </template>

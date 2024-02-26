@@ -1,10 +1,9 @@
 <script setup>
-import { store } from "@/stores/counter";
-import jonathan from "@/components/joe.vue";
+import all from "@/components/all.vue";
 </script>
 
 <template>
-  <h1>bye</h1>
-  <jonathan />
-  <button @click="store.count++">Press B {{ store.count }}</button>
+  <main>
+    <all />
+  </main>
 </template>

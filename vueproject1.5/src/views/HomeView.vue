@@ -134,6 +134,6 @@ const pokemons = [
   <CreateItem
     v-for="pokemon in pokemons"
     :key="pokemon.name"
-    :shoppingCart="pokemon"
+    :itemCard="pokemon"
   />
 </template>

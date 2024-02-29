@@ -1,7 +1,8 @@
 <script setup>
 import CreateItem from "@/components/CreateItem.vue";
 import cartItem from "@/components/cartItem.vue";
-import { cart } from "@/stores/carts";
+import { useCounterStore } from "@/stores/carts";
+const store = useCounterStore();
 
 const pokemons = [
   {
@@ -139,12 +140,7 @@ const pokemons = [
     :key="pokemon.name"
     :itemCard="pokemon"
   />
-  <cartItem
-    v-if="cart.length > 0"
-    v-for="card in cart"
-    :key="card.name"
-    :cart="card"
-  />
+  <cartItem v-for="card in store.cart" :key="card.name" :cartCard="card" />
 </template>
 
 <style scoped></style>

@@ -8,19 +8,20 @@
 </template>
 
 <script setup>
-import { cart } from "@/stores/carts";
+import { useCounterStore } from "../stores/carts";
 import { ref, reactive } from "vue";
+import { storeToRefs } from "pinia";
+const store = useCounterStore();
 const props = defineProps({
   itemCard: Object,
 });
 
 function addItem() {
-  cart.push({
+  store.cart.push({
     name: props.itemCard.name,
     sprite: props.itemCard.sprite,
     price: props.itemCard.price,
   });
-  console.log(cart);
 }
 </script>
 

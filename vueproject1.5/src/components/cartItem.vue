@@ -8,14 +8,15 @@
 </template>
 
 <script setup>
-import { cart } from "@/stores/carts";
+import { useCounterStore } from "@/stores/carts";
 import { ref, reactive } from "vue";
 const props = defineProps({
   cartCard: Object,
 });
 
+const store = useCounterStore();
 function remove() {
-  cart.filter((item) => item != props.cartCard);
+  store.cart.value = store.cart.value.filter((item) => item != props.cartCard);
 }
 </script>
 

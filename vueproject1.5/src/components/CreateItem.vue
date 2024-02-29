@@ -3,20 +3,18 @@
     <h2>{{ itemCard.name }}</h2>
     <img :src="itemCard.sprite" alt="" />
     <h3>{{ itemCard.price }}</h3>
-    <button @click="addItem">{{ num }}</button>
+    <button @click="addItem">Buy</button>
   </div>
 </template>
 
 <script setup>
-// import {cart} from
+import { cart } from "@/stores/carts";
 import { ref, reactive } from "vue";
 const props = defineProps({
   itemCard: Object,
 });
 
-const num = ref(0);
 function addItem() {
-  num.value++;
   cart.push({
     name: props.itemCard.name,
     sprite: props.itemCard.sprite,
@@ -24,7 +22,6 @@ function addItem() {
   });
   console.log(cart);
 }
-const cart = reactive([]);
 </script>
 
 <style scoped></style>

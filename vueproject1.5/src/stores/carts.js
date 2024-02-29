@@ -10,6 +10,4 @@ export const useCounterStore = defineStore("counter", () => {
 
   return { count, doubleCount, increment };
 });
-
-let cart = [];
-export { cart };
+export const cart = ref([]);

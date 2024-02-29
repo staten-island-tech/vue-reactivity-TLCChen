@@ -1,5 +1,8 @@
 <script setup>
 import CreateItem from "@/components/CreateItem.vue";
+import cartItem from "@/components/cartItem.vue";
+import { cart } from "@/stores/carts";
+
 const pokemons = [
   {
     name: "Omastar",
@@ -136,4 +139,12 @@ const pokemons = [
     :key="pokemon.name"
     :itemCard="pokemon"
   />
+  <cartItem
+    v-if="cart.length > 0"
+    v-for="card in cart"
+    :key="card.name"
+    :cart="card"
+  />
 </template>
+
+<style scoped></style>

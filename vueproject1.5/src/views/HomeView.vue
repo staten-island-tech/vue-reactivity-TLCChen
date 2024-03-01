@@ -135,12 +135,28 @@ const pokemons = [
 </script>
 
 <template>
-  <CreateItem
-    v-for="pokemon in pokemons"
-    :key="pokemon.name"
-    :itemCard="pokemon"
-  />
-  <cartItem v-for="card in store.cart" :key="card.name" :cartCard="card" />
+  <div id="main">
+    <div id="store">
+      <CreateItem
+        v-for="pokemon in pokemons"
+        :key="pokemon.name"
+        :itemCard="pokemon"
+      />
+    </div>
+    <div id="cart">
+      <cartItem v-for="card in store.cart" :key="card.name" :cartCard="card" />
+    </div>
+  </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+#main {
+  display: flex;
+  justify-content: space-between;
+}
+
+#store,
+#cart {
+  flex-direction: column;
+}
+</style>

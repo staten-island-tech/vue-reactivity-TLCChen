@@ -25,4 +25,9 @@ function addItem() {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.item {
+  border: solid 0.2rem rebeccapurple;
+  margin: 1rem auto;
+}
+</style>

@@ -135,6 +135,7 @@ const pokemons = [
 </script>
 
 <template>
+  <h1>PokemonCard Store</h1>
   <div id="main">
     <div id="store">
       <CreateItem
@@ -144,6 +145,8 @@ const pokemons = [
       />
     </div>
     <div id="cart">
+      <h2 id="prices">Shopping cart</h2>
+      <h2 id="prices">Total Price: ${{ store.price.price }}</h2>
       <cartItem v-for="card in store.cart" :key="card.name" :cartCard="card" />
     </div>
   </div>
@@ -152,11 +155,39 @@ const pokemons = [
 <style scoped>
 #main {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
-#store,
+#store {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: rgb(170, 169, 169, 0.7);
+  border: solid 0.5rem #ffe066;
+  border-radius: 1rem;
+  box-shadow: 1rem 1rem 1rem rgb(0, 0, 0);
+  width: 60%;
+  margin: 1rem;
+  text-align: center;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
 #cart {
   flex-direction: column;
+  width: 25%;
+  background-color: rgb(170, 169, 169, 0.7);
+  border: solid 0.5rem #ffe066;
+  border-radius: 1rem;
+  justify-content: space-between;
+}
+h1 {
+  font-size: 8rem;
+  text-align: center;
+}
+h2 {
+  font-size: 3rem;
+  text-align: center;
+  background: linear-gradient(150deg, #eeea1f, #f565e2);
 }
 </style>
